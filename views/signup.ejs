@@ -1,0 +1,30 @@
+<% var error %>
+
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-lg-offset-3" style="padding: 30px 0">
+            <% if (error) { %>
+                <div class="alert alert-warning text-center text-uppercase"><%= error %></div>
+            <% } %>
+            <form action="/signup" method="post">
+                <label for="name">Enter name</label>
+                <input class="form-control" style="margin-bottom: 20px" type="text" name="name" id="name" placeholder="Enter name" required>
+                <label for="email">Enter email</label>
+                <input class="form-control" style="margin-bottom: 20px" type="email" name="email" id="email" placeholder="Enter email" required>
+                <label for="password">Enter password</label>
+                <input class="form-control" style="margin-bottom: 20px" type="password" name="password" id="password" placeholder="Enter password" required>
+                <div style="display: flex; justify-content: space-between; align-items: center">
+                    <button class="btn btn-primary" type="submit">Register</button>
+                    Have you account already ?
+                    <a class="btn btn-success" href="/login">Login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer') %>
+<%- include('partials/foot') %>

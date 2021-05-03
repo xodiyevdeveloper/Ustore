@@ -1,0 +1,33 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<div class="single-product-area">
+    <div class="zigzag-bottom"></div>
+    <div class="container">
+        <div class="row">
+            <% for (let {_id, title, img, price} of products) { %>
+                <div class="col-md-3 col-sm-6">
+                    <div class="single-shop-product">
+                        <div class="product-upper">
+                            <img src="<%= img %>" alt="">
+                        </div>
+                        <h2><a href=""><%= title %></a></h2>
+                        <div class="product-carousel-price">
+                            <ins>$<%= price %></ins>
+                        </div>
+
+                        <div class="product-option-shop">
+                            <a class="add_to_cart_button" id="<%= _id %>">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    </div>
+</div>
+
+
+
+<%- include('partials/footer') %>
+<script src="/public/js/add-to-cart.js"></script>
+<%- include('partials/foot') %>
